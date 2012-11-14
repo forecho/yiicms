@@ -159,3 +159,338 @@ Stack trace:
 REQUEST_URI=/yiicms/admin.php?r=user/index
 HTTP_REFERER=http://localhost/yiicms/admin.php?r=user/index
 ---
+2012/11/05 07:47:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/index.html
+---
+2012/11/05 07:47:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/admin.php.html
+---
+2012/11/05 07:49:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/contact.html
+---
+2012/11/05 07:49:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/page/view/about.html
+---
+2012/11/05 08:05:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '找不到请求的视图 "about.html"。' in D:\workspace\yii\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 D:\workspace\yii\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('about.html')
+#1 D:\workspace\yii\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 D:\workspace\yii\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 D:\workspace\yii\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 D:\workspace\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('page')
+#6 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page/view/...')
+#7 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\workspace\yiicms\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/yiicms/site/page/view/about.html
+HTTP_REFERER=http://localhost/yiicms/site/index.html
+---
+2012/11/05 08:05:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/index.php/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/index.php/site/contact
+---
+2012/11/05 09:31:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/page.html?view=about
+---
+2012/11/05 09:32:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/page.html?view=about
+---
+2012/11/05 09:32:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php.html
+---
+2012/11/05 09:32:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:32:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:33:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:33:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php
+HTTP_REFERER=http://localhost/yiicms/site/admin.php
+---
+2012/11/05 09:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/page.html?view=about
+---
+2012/11/05 09:42:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "admin.php" 动作.' in D:\workspace\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\workspace\yii\framework\web\CController.php(271): CController->missingAction('admin.php')
+#1 D:\workspace\yii\framework\web\CWebApplication.php(276): CController->run('admin.php')
+#2 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/admin.php')
+#3 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\workspace\yiicms\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yiicms/site/admin.php.html
+HTTP_REFERER=http://localhost/yiicms/site/page.html?view=about
+---
+2012/11/05 09:57:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "r=user/index"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('r=user/index')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\admin.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin.php/r=user/index
+---
+2012/11/05 10:14:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/site/login"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/site/logi...')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin/site/login.html
+HTTP_REFERER=http://localhost/yiicms/admin.php
+---
+2012/11/05 10:21:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/site/login"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/site/logi...')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin/site/login.html
+HTTP_REFERER=http://localhost/yiicms/admin.php
+---
+2012/11/05 10:21:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/site/login"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/site/logi...')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin/site/login.html
+HTTP_REFERER=http://localhost/yiicms/admin.php
+---
+2012/11/05 10:21:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "admin/site/login"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/site/logi...')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin/site/login.html
+HTTP_REFERER=http://localhost/yiicms/admin.php
+---
+2012/11/06 02:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "r=user/index"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('r=user/index')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\admin.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/admin.php/r=user/index
+---
+2012/11/06 02:57:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "r=user/index"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('r=user/index')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/r=user/index
+---
+2012/11/06 02:57:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "user/create"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/create')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/user/create.html
+HTTP_REFERER=http://localhost/yiicms/admin.php/user/index
+---
+2012/11/06 02:59:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "user/create"。' in D:\workspace\yii\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\workspace\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('user/create')
+#1 D:\workspace\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\workspace\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yiicms/user/create.html
+HTTP_REFERER=http://localhost/yiicms/admin.php/user/index
+---

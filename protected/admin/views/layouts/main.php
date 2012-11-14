@@ -32,6 +32,7 @@
 				//array('label'=>'关于', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'用户管理', 'url'=>array('/user/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'文章管理', 'url'=>array('/posts/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'分类管理', 'url'=>array('/category/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'联系我们', 'url'=>array('/site/contact')),
 				array('label'=>'后台登录', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)

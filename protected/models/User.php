@@ -97,4 +97,30 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	//查询密码是否匹配
+ 
+	public function validatePassword($password)
+	{
+		return $this->encrypt($password)===$this->password;
+	}
+	 
+	public function encrypt($pass)
+	{
+		return md5($pass);
+	}
+	 
+	// 添加的密码进行MD5加密
+	protected function beforeSave() {
+		if (parent::beforeSave()) {
+			//判断是否是新的密码
+			if ($this->isNewRecord) {
+				$this->password = $this->encrypt($this->password);
+			}
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }

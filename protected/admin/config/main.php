@@ -11,31 +11,37 @@ $frontend=dirname($backend);
 Yii::setPathOfAlias('backend', $backend);
 
 $frontendArray=require($frontend.'/config/main.php');
+unset($frontendArray['components']['urlManager']);//不隐藏后台URL中的admin.php
+//unset($frontendArray['modules']);
+//unset($frontendArray['components']['clientScript']);
 
 $backendArray=array(
-    'name'=>'后台管理系统',
+    'name'=>'网站后台管理系统',
     'basePath' => $frontend,
     'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
+    'runtimePath' => $backend.'/runtime',
 
     // autoloading model and component classes
     'import'=>array(
         'application.models.*',
-		'backend.components.*',
+        'application.components.*',
+        'application.extensions.*',
+        'application.extensions.nestedset.*',
+        'backend.models.*',
+        'backend.components.*', //这里的先后顺序一定要搞清
     ),
     'components'=>array(
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
-		),
+                'user'=>array(
+                        // enable cookie-based authentication
+                        'allowAutoLogin'=>true,
+                ),
     ),
-	
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params'=>array(
-		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
-	),
+
+    // main is the default layout
+    //'layout'=>'main',
+    // alternate layoutPath
+    'layoutPath'=>dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'layouts'.DIRECTORY_SEPARATOR,
 );
 if(!function_exists('w3_array_union_recursive'))
 {
