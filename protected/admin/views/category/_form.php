@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'pid'); ?>
-		<?php echo $form->dropDownList($model,'pid',Category::model()->getAllCategoryName()); ?>
+		<?php echo $form->dropDownList($model,'pid', array('0' => '根目录')+Category::model()->getAllCategoryName()); ?>
 		<?php echo $form->error($model,'pid'); ?>
 	</div>
 

@@ -69,6 +69,20 @@ class CategoryController extends Controller
 		if(isset($_POST['Category']))
 		{
 			$model->attributes=$_POST['Category'];
+			
+			//获取id转化成path
+			$pid = $_POST['Category']['pid'];
+			if($pid == 0)
+			{
+				$model->path = 0;
+			}
+			else
+			{
+				$path = Category::model()->findbyPk($pid);
+				// echo $path->path;
+				$model->path = $path->path.'-'.$pid;
+			}
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -93,6 +107,19 @@ class CategoryController extends Controller
 		if(isset($_POST['Category']))
 		{
 			$model->attributes=$_POST['Category'];
+			
+			$pid = $_POST['Category']['pid'];
+			if($pid == 0)
+			{
+				$model->path = 0;
+			}
+			else
+			{
+				$path = Category::model()->findbyPk($pid);
+				// echo $path->path;
+				$model->path = $path->path.'-'.$pid;
+			}
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

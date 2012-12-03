@@ -38,13 +38,15 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, pid, path, type', 'required'),
+			//array('name, pid, path, type', 'required'),
+			array('name, pid, type', 'required'),
 			array('pid, type', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>30),
-			array('path', 'length', 'max'=>200),
+			//array('path', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, pid, path, type', 'safe', 'on'=>'search'),
+			//array('id, name, pid, type', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,7 +70,7 @@ class Category extends CActiveRecord
 			'id' => 'ID',
 			'name' => '分类名',
 			'pid' => '父级分类',
-			//'path' => 'Path',
+			'path' => 'Path',
 			'type' => '分类类型',
 		);
 	}
@@ -94,22 +96,25 @@ class Category extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-	public $bpath;
+	//public $bpath;
 	// 获取父级type
 	public function getAllCategoryName() {
 		//$allCategoryName = Category::model()->findAll();
-		$allCategoryName =  Category::model()->findAllBySql("SELECT id, path, name, type, CONCAT( path,  '-', id ) AS bpath FROM  `fe_category` ORDER BY bpath");
-		
-		return CHtml::listData($allCategoryName,'id','name');
-		//return CHtml::listData($allCategoryName,'id','name','bpath');
-		
-		//下面是用来验证的代码
-		
-		//$returnData = CHtml::listData($allCategoryName,'id','name');
-		//print_r($returnData);
-		//echo $returnData[1];
-		//echo $count = count(explode('-',$returnData));
-		//print_r($returnData);
-		//exit;
+		$allCategoryName =  Category::model()->findAllBySql("SELECT id, path, name,  CONCAT( path,  '-', id ) AS bpath FROM  `yii_category` ORDER BY bpath");
+		foreach($allCategoryName as $row) {
+			$count = count(explode('-',$row->path));
+			$data[$row->id] = str_repeat("--", $count).$row->name;
+        }
+        return $data;
 	}
+
+	// public function getCategoryPath() {
+		////$allCategoryName = Category::model()->findAll();
+		// $allCategoryName =  Category::model()->findAllBySql("SELECT id, path, name,  CONCAT( path,  '-', id ) AS bpath FROM  `fe_category` ORDER BY bpath");
+		// foreach($allCategoryName as $row) {
+			// $count = count(explode('-',$row->path));
+			// $data[$row->id] = str_repeat("--", $count).$row->name;
+        // }
+        // return $data;
+	// }
 }

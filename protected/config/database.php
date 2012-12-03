@@ -5,5 +5,5 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
-			'tablePrefix' => 'fe_',
+			'tablePrefix' => 'yii_',
 		);
