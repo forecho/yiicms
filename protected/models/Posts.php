@@ -106,4 +106,5 @@ class Posts extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
 }

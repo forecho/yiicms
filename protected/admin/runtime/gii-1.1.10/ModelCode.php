@@ -1,7 +1,7 @@
 <?php
 return array (
   'template' => 'default',
-  'tablePrefix' => 'fe_',
+  'tablePrefix' => 'yii_',
   'modelPath' => 'application.models',
   'baseClass' => 'CActiveRecord',
   'buildRelations' => '1',

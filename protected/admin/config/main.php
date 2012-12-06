@@ -21,7 +21,7 @@ $backendArray=array(
     'controllerPath' => $backend.'/controllers',
     'viewPath' => $backend.'/views',
     'runtimePath' => $backend.'/runtime',
-
+	'defaultController'=>'options/welcome',
     // autoloading model and component classes
     'import'=>array(
         'application.models.*',
@@ -32,10 +32,20 @@ $backendArray=array(
         'backend.components.*', //这里的先后顺序一定要搞清
     ),
     'components'=>array(
-                'user'=>array(
-                        // enable cookie-based authentication
-                        'allowAutoLogin'=>true,
-                ),
+		'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
+		
+		'bootstrap'=>array(
+       		'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+   		 ),
+		 
+		'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
+		
     ),
 
     // main is the default layout

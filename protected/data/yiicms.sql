@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 12 月 03 日 09:54
+-- 生成日期: 2012 年 12 月 06 日 09:20
 -- 服务器版本: 5.5.16
 -- PHP 版本: 5.3.8
 
@@ -47,6 +47,22 @@ INSERT INTO `yii_category` (`id`, `name`, `pid`, `path`, `type`) VALUES
 (5, '欧美电影', 2, '0-2', 0),
 (6, '国内电影', 2, '0-2', 0),
 (7, '音乐', 0, '0', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `yii_options`
+--
+
+CREATE TABLE IF NOT EXISTS `yii_options` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `option_name` varchar(100) NOT NULL DEFAULT '',
+  `option_value` text,
+  `option_type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '参数类型0 为系统参数，不能删除1 为自定义参数',
+  `name` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `config_name_UNIQUE` (`option_name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='配置信息表' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
