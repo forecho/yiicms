@@ -1,19 +1,19 @@
+<?php
+$this->breadcrumbs=array(
+	Yii::t('admin', 'Welcome'),
+);?>
+
 <?php $this->beginWidget('bootstrap.widgets.TbHeroUnit', array(
-    'heading'=>'欢迎使用ForEcho',
+    'heading'=>CHtml::encode(Yii::app()->name),
 )); ?>
  
 	<div id="notice">
-		<ul>
-			<li><strong>注意事项：</strong></li>
-			<li>1、当您退出管理状态时，建议您点击“退出管理”；</li>
-			<li>2、在公共场合上网，登录管理页面，退出后请关闭所有窗口；</li>
-			<li>3、为了您的个人使用安全，请经常更改密码；</li>
-		</ul>
+		<p><?php echo date('Y-m-d H:i:s');?></p>
+		<p>
+			<?php echo Yii::t('admin', 'View All Posts', array('{count}'=>$postCount));?>
+			<a class="btn btn-primary btn-small" href=""><?php echo Yii::t('admin','View');?></a>
+		</p>
+		
 	</div>
- <p><?php $this->widget('bootstrap.widgets.TbButton', array(
-        'type'=>'primary',
-        'size'=>'large',
-        'label'=>'Learn more',
-    )); ?></p>
  
 <?php $this->endWidget(); ?>

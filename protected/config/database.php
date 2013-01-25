@@ -6,4 +6,7 @@ return array(
 			'password' => '',
 			'charset' => 'utf8',
 			'tablePrefix' => 'yii_',
+			
+			'enableProfiling'=>true,  
+			'enableParamLogging'=>true,  
 		);

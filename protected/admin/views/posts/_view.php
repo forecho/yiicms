@@ -8,12 +8,12 @@
 	<?php echo CHtml::encode($data->author_name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('posts_content')); ?>:</b>
-	<?php echo CHtml::encode($data->posts_content); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('content')); ?>:</b>
+	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('posts_title')); ?>:</b>
-	<?php echo CHtml::encode($data->posts_title); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
+	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('type_id')); ?>:</b>

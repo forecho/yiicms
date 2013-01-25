@@ -6,11 +6,15 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 
+
+
 $backend=dirname(dirname(__FILE__));
 $frontend=dirname($backend);
 Yii::setPathOfAlias('backend', $backend);
 
 $frontendArray=require($frontend.'/config/main.php');
+require($frontend.'/config/define.php');
+
 unset($frontendArray['components']['urlManager']);//不隐藏后台URL中的admin.php
 //unset($frontendArray['modules']);
 //unset($frontendArray['components']['clientScript']);
@@ -39,12 +43,17 @@ $backendArray=array(
 		
 		'bootstrap'=>array(
        		'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-   		 ),
+   		),
+		'log'=>array(  
+			'class'=>'CLogRouter',  
+			'routes'=>array(  
+				array(  
+					'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',  
+					'ipFilters'=>array('*'),  
+				),  
+			),  
+		),  
 		 
-		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
-		),
 		
     ),
 

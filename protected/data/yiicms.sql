@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 12 月 06 日 09:20
+-- 生成日期: 2013 年 01 月 25 日 10:15
 -- 服务器版本: 5.5.16
 -- PHP 版本: 5.3.8
 
@@ -73,22 +73,16 @@ CREATE TABLE IF NOT EXISTS `yii_options` (
 CREATE TABLE IF NOT EXISTS `yii_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author_name` varchar(10) NOT NULL COMMENT '作者',
-  `posts_content` mediumtext NOT NULL,
-  `posts_title` varchar(200) NOT NULL,
+  `content` mediumtext NOT NULL,
+  `title` varchar(200) NOT NULL,
   `type_id` tinyint(3) NOT NULL,
   `status_id` tinyint(3) NOT NULL,
   `create_time` datetime NOT NULL,
-  `update_time` datetime NOT NULL,
   `order_id` int(11) NOT NULL COMMENT '排序',
+  `keywords` varchar(200) NOT NULL,
+  `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `yii_posts`
---
-
-INSERT INTO `yii_posts` (`id`, `author_name`, `posts_content`, `posts_title`, `type_id`, `status_id`, `create_time`, `update_time`, `order_id`) VALUES
-(1, 'caicai', '简单易用，快速稳定是又拍给我们的良好体验。随着更多互联网业务的展开，又拍云存储服务将会成为我们业务重要的组成部分。', '又拍云存储', 0, 1, '2012-11-02 00:00:00', '2012-11-02 00:00:00', 0);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 -- --------------------------------------------------------
 

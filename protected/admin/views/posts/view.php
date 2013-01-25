@@ -20,12 +20,12 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'author_name',
-		'posts_content',
-		'posts_title',
+		'content',
+		'title',
 		'type_id',
 		'status_id',
 		'create_time',
-		'update_time',
+		
 		'order_id',
 	),
 )); ?>

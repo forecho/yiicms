@@ -3,12 +3,7 @@
 class SiteController extends Controller
 {
 	
-	public function actionIndex()
-	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
-	}
+	
 	
 	public $layout='//layouts/login';
 	
@@ -22,17 +17,18 @@ class SiteController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  //未登录用户允许操作的action
-					'actions'=>array('login','logout','register'),
-					'users'=>array('*'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('login','error'),
+				'users'=>array('*'),
 			),
-			array('allow',   //登录用户允许操作全部action
-					'users'=>array('@')
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('logout'),
+				'users'=>array('@'),
 			),
-			array('deny',  // allow all users to perform 'index' and 'view' actions
-					'users'=>array('*'),
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
-	   );
+		);
 	}
 	/**
 	 * This is the action to handle external exceptions.

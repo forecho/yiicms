@@ -6,12 +6,13 @@
  * The followings are the available columns in table '{{posts}}':
  * @property integer $id
  * @property string $author_name
- * @property string $posts_content
- * @property string $posts_title
+ * @property string $content
+ * @property string $title
  * @property integer $type_id
  * @property integer $status_id
  * @property string $create_time
- * @property string $update_time
+ * @property string $keywords
+ * @property string $description
  * @property integer $order_id
  */
 class Posts extends CActiveRecord
@@ -42,13 +43,15 @@ class Posts extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('author_name, posts_content, posts_title, type_id, status_id, create_time, update_time, order_id', 'required'),
+			array('author_name, content, title, type_id, status_id, create_time, order_id', 'required'),
 			array('type_id, status_id, order_id', 'numerical', 'integerOnly'=>true),
 			array('author_name', 'length', 'max'=>10),
-			array('posts_title', 'length', 'max'=>200),
+			array('title', 'length', 'max'=>200),
+			array('keywords', 'length', 'max'=>10),
+			array('description', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, author_name, posts_content, posts_title, type_id, status_id, create_time, update_time, order_id', 'safe', 'on'=>'search'),
+			array('id, author_name, content, title, type_id, status_id, create_time, keywords, description, order_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +63,7 @@ class Posts extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'typeName'=>array(self::BELONGS_TO,'Category','type_id'),
 		);
 	}
 
@@ -71,12 +75,13 @@ class Posts extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'author_name' => '作者',
-			'posts_content' => '内容',
-			'posts_title' => '标题',
+			'content' => '内容',
+			'title' => '标题',
 			'type_id' => '类型',
 			'status_id' => '状态',
 			'create_time' => '添加时间',
-			'update_time' => '修改时间',
+			'keywords' => '关键字',
+			'description' => '描述',
 			'order_id' => '排序',
 		);
 	}
@@ -93,17 +98,39 @@ class Posts extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('title',$this->title,true);
 		$criteria->compare('author_name',$this->author_name,true);
-		$criteria->compare('posts_content',$this->posts_content,true);
-		$criteria->compare('posts_title',$this->posts_title,true);
-		$criteria->compare('type_id',$this->type_id);
-		$criteria->compare('status_id',$this->status_id);
+		$criteria->compare('type_id',$this->type_id,true);
+		$criteria->compare('status_id',$this->status_id,false);
 		$criteria->compare('create_time',$this->create_time,true);
-		$criteria->compare('update_time',$this->update_time,true);
-		$criteria->compare('order_id',$this->order_id);
 
 		return new CActiveDataProvider($this, array(
+			'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是created倒序
+	        ),
 			'criteria'=>$criteria,
+		));
+	}
+	
+	public static function stateLabels()
+    {
+        return array(
+            POST_STATE_PUBLISHED => Yii::t('admin', 'Published'),
+            POST_STATE_DRAFT => Yii::t('admin', 'Save Draft'),
+            POST_STATE_TRASH => Yii::t('admin', 'Move to Trash'),
+        );
+    }
+	
+	public function state($state)
+	{
+		return $state;
+	}
+	
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('posts/view', array(
+				'id'=>$this->id,
+				'title'=>str_replace('','-',trim($this->title)),
 		));
 	}
 	

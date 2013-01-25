@@ -13,32 +13,32 @@
 
 	<!-- <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" /> -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
+	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin-style.css" />
 </head>
 
 <body>
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
 	<div id="mainmenu">
-	
 	<?php $this->widget('bootstrap.widgets.TbNavbar', array(
 		'type'=>'null', // null or 'inverse'
 		'brand'=> Yii::t('admin', 'Dashboard'),
-		'brandUrl'=>'#',
+		'brandUrl'=>array('options/welcome'),
 		'collapse'=>true, // requires bootstrap-responsive.css
 		'items'=>array(
 			array(
 				'class'=>'bootstrap.widgets.TbMenu',
 				'items'=>array(
 					array('label'=>Yii::t('admin', 'Posts'), 'url'=>'#', 'items'=>array(
-						array('label'=>Yii::t('admin', 'All Posts'), 'url'=> array('posts/admin')),
+						array('label'=>Yii::t('admin', 'All Posts'), 'url'=> array('posts/admin'),'itemOptions'=>array('activeCssClass'=>'active')),
 						array('label'=>Yii::t('admin', 'Create Post'), 'url'=> array('posts/create')),
+						'---',
+						array('label'=>Yii::t('admin', 'Draft'), 'url'=> array('posts/draft')),
+						array('label'=>Yii::t('admin', 'Trash'), 'url'=> array('posts/trash')),
 					)),
 					array('label'=>Yii::t('admin', 'Categories'), 'url'=>'#', 'items'=>array(
 						array('label'=>Yii::t('admin', 'All Categories'), 'url'=> array('category/admin')),
@@ -74,31 +74,19 @@
 			),
 		),
 	)); ?>
-	
-
-	
-		 <?php 
-		 // $this->widget('zii.widgets.CMenu',array(
-			// 'items'=>array(
-				// array('label'=>'首页', 'url'=>array('/site/index')),
-				// array('label'=>'关于', 'url'=>array('/site/page', 'view'=>'about')),
-				// array('label'=>'用户管理', 'url'=>array('/user/index'), 'visible'=>!Yii::app()->user->isGuest),
-				// array('label'=>'文章管理', 'url'=>array('/posts/index'), 'visible'=>!Yii::app()->user->isGuest),
-				// array('label'=>'分类管理', 'url'=>array('/category/index'), 'visible'=>!Yii::app()->user->isGuest),
-				// array('label'=>'联系我们', 'url'=>array('/site/contact')),
-				// array('label'=>'后台登录', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				// array('label'=>'退出 ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			// ),
-		// )); ?>
-	</div><!-- mainmenu -->
+	</div>
+	<!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+    			'links'=>$this->breadcrumbs,
+			)); 
+		?><!-- breadcrumbs -->
 	<?php endif?>
-
-	<?php echo $content; ?>
-
+	
+	<div class="row">
+		<?php echo $content; ?>
+	</div>
+	
 	<div class="clear"></div>
 
 	<div id="footer">

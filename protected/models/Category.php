@@ -8,6 +8,7 @@
  * @property string $name
  * @property integer $pid
  * @property string $path
+ * @property string $name
  * @property integer $type
  */
 class Category extends CActiveRecord
@@ -117,4 +118,14 @@ class Category extends CActiveRecord
         // }
         // return $data;
 	// }
+	
+	public function getCategoryList() {
+		$categoryList = Category::model()->findAll();
+		return CHtml::listData($categoryList,'id','name');
+		//$returnData = CHtml::listData($newsTypeList,'id','news_type_name');
+		//print_r($returnData);
+		//exit;
+	}
+		
+
 }

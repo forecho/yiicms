@@ -12,11 +12,28 @@ return array(
     'invalid_request' => '非法请求',
         
     'Dashboard' => '仪表盘',
+    'View' => '查看',
+    'Manage' => '管理',
+	'Advanced Search' => '高级搜索',
+	'Search' => '搜索',
+	'Create' => '创建',
+	'Save' => '保存',
 	
 	'Posts' =>'文章',
 	'All Posts' =>'所有文章',
 	'Create Post' =>'写文章',
 	'Update Post' => '更新文章',
+	'List Post' => '文章列表',
+	'Manage Posts' => '管理文章',
+	'Published' => '已发布',
+	'Save Draft' => '保存草稿',
+	'Move to Trash' => '移至回收站',
+	'Forever Delete' => '永久删除',
+	'Draft' => '草稿',
+	'Restore' => '还原',
+	'Trash' => '回收站',
+	
+	
 	
 	'Categories' => '分类目录',
 	'All Categories' => '所有分类',
@@ -348,12 +365,16 @@ return array(
 
     /* welcome */
     'welcome_text' => "欢迎使用{appname}管理中心",
-    'not_veryfiy_post_text' => '有&nbsp;<b>{count}</b>&nbsp;个投稿未审核。',
+    //'not_veryfiy_post_text' => '有&nbsp;<b>{count}</b>&nbsp;个投稿未审核。',
+   
     'not_veryfiy_user_text' => '有&nbsp;<b>{count}</b>&nbsp;个用户注册请求未处理。',
     'not_veryfiy_comment_text' => '有&nbsp;<b>{count}</b>&nbsp;个评论未审核。',
     'view_latest_posts' => '查看最新投稿',
     'view_latest_users' => '审核用户',
     'view_latest_comments' => '审核评论',
+	
+	
+	'View All Posts' => '共有&nbsp;<b>{count}</b>&nbsp;篇文章。',
 );
 
 

@@ -27,7 +27,7 @@ class PostsController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','draft','trash'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -35,7 +35,7 @@ class PostsController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','delall','multiTrash'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -140,9 +140,11 @@ class PostsController extends Controller
 	{
 		$model=new Posts('search');
 		$model->unsetAttributes();  // clear any default values
+		
 		if(isset($_GET['Posts']))
 			$model->attributes=$_GET['Posts'];
-
+		
+		$model->status_id = POST_STATE_PUBLISHED;  //不在垃圾箱
 		$this->render('admin',array(
 			'model'=>$model,
 		));
@@ -173,4 +175,77 @@ class PostsController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	
+	public function actionDelall()
+	{
+		if (Yii::app()->request->isPostRequest)
+		{
+			$criteria= new CDbCriteria;
+			$criteria->addInCondition('id', $_POST['id']);
+			Posts::model()->deleteAll($criteria);//Words换成你的模型
+			
+			if(isset(Yii::app()->request->isAjaxRequest)) {
+				echo CJSON::encode(array('success' => true));die();
+				
+			} 
+			else
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+	}
+	
+	
+	/**
+	 * 批量将文章扔到回收站
+	 * @param array $ids ID数组
+	 * @param string $callback jsonp回调函数，自动赋值
+	 */
+	public function actionMultiTrash()
+	{
+	    if (Yii::app()->request->isPostRequest)
+		{
+			Posts::model()->updateByPk($_POST['id'], array('status_id'=>POST_STATE_TRASH));//移至回收站
+			if(isset(Yii::app()->request->isAjaxRequest)) {
+				echo CJSON::encode(array('success' => true));die();
+			} 
+			else
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+	}
+	
+	
+	
+	public function actionDraft()
+	{
+		$model=new Posts('search');
+		$model->unsetAttributes();  // clear any default values
+		
+		if(isset($_GET['Posts']))
+			$model->attributes=$_GET['Posts'];
+		
+		$model->status_id = POST_STATE_DRAFT;  //草稿
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+	
+	public function actionTrash()
+	{
+		$model=new Posts('search');
+		$model->unsetAttributes();  // clear any default values
+		
+		if(isset($_GET['Posts']))
+			$model->attributes=$_GET['Posts'];
+		
+		$model->status_id = POST_STATE_TRASH;  //回收站
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	
 }

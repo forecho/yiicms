@@ -11,7 +11,8 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log','bootstrap'),
-
+	
+	'timeZone' => 'Asia/Shanghai',
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -71,21 +72,15 @@ return array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
         ),
-		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
-			),
-		),
+		'log'=>array(  
+			'class'=>'CLogRouter',  
+			'routes'=>array(  
+				array(  
+					'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',  
+					'ipFilters'=>array('*'),  
+				),  
+			),  
+		), 
 	),
 
 	// application-level parameters that can be accessed
